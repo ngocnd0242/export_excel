@@ -21,5 +21,12 @@ class DatabaseSeeder extends Seeder
         $this->call(CoordinationItemTableSeeder::class);
         $this->call(ItemTableSeeder::class);
         $this->call(SkuTableSeeder::class);
+
+//        Item: sku, product, brand, item_image, season
+        $this->call(SeasonTableSeeder::class); //Option
+        $this->call(ItemImageTableSeeder::class); //Option
+        $this->call(CategoryTableSeeder::class);
+        $this->call(SubCategoryTableSeeder::class);
+        $this->call(StockTableSeeder::class);
     }
 }
