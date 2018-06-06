@@ -16,24 +16,24 @@ class CategoryTableSeeder extends Seeder
         $table = 't_category';
 
         DB::table($table)->truncate();
-        $faker = Faker::create();
+        $faker = Faker::create('ja_JP');
         for ($i = 1; $i <= 50; $i++) {
             $arrData[] = [
                 'category_id' => $i,
                 'category_name' => $faker->name,
                 'category_name_lang' => $faker->name,
-                'comment' => $faker->text,
-                'comment_lang' => $faker->text,
-                'option_1' => $faker->text,
-                'option_1_lang' => $faker->text,
-                'option_2' => $faker->text,
-                'option_2_lang' => $faker->text,
-                'option_3' => $faker->text,
-                'option_3_lang' => $faker->text,
-                'option_4' => $faker->text,
-                'option_4_lang' => $faker->text,
-                'option_5' => $faker->text,
-                'option_5_lang' => $faker->text,
+                'comment' => $faker->realText(10),
+                'comment_lang' => $faker->realText(10),
+                'option_1' => $faker->realText(10),
+                'option_1_lang' => $faker->realText(10),
+                'option_2' => $faker->realText(10),
+                'option_2_lang' => $faker->realText(10),
+                'option_3' => $faker->realText(10),
+                'option_3_lang' => $faker->realText(10),
+                'option_4' => $faker->realText(10),
+                'option_4_lang' => $faker->realText(10),
+                'option_5' => $faker->realText(10),
+                'option_5_lang' => $faker->realText(10),
                 'sort' => null,
                 'view' => 1,
                 'view_lang' => null,

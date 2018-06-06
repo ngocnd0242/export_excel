@@ -17,7 +17,7 @@ class SkuTableSeeder extends Seeder
         $itemIds = array_pluck(DB::table('t_item')->get(), 'item_id');
         $itemCode = array_pluck(DB::table('t_product')->get(), 'item_code');
 
-        DB::table($table)->truncate();
+        DB::table($table)->truncate('ja_JP');
         $faker = Faker::create();
         for ($i = 1; $i <= 10000; $i++) {
             $arrData[] = [
@@ -39,11 +39,11 @@ class SkuTableSeeder extends Seeder
                 'baika2_lang' => rand(1, 10),
                 'stock' => rand(1, 100),
                 'sort' => rand(1, 100),
-                'view' => rand(1, 2),
-                'view_lang' => rand(1, 2),
+                'view' => 1,
+                'view_lang' => 1,
                 'rearrival_flag' => rand(1, 2),
-                'sku_notes' => $faker->text,
-                'sku_notes_lang' => $faker->text,
+                'sku_notes' => $faker->realText(10),
+                'sku_notes_lang' => $faker->realText(10),
                 'register_date' => Carbon::now(),
                 'update_date' => Carbon::now()
             ];

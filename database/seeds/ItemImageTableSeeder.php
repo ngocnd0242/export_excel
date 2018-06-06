@@ -18,7 +18,7 @@ class ItemImageTableSeeder extends Seeder
 
         DB::table($table)->truncate();
         $faker = Faker::create();
-        for ($i = 1; $i <= 50000; $i++) {
+        for ($i = 1; $i <= 100; $i++) {
             $arrData[] = [
                 'item_image_id' => $i,
                 'item_id' => $faker->randomElement($itemIds),
@@ -28,7 +28,7 @@ class ItemImageTableSeeder extends Seeder
                 'height' => rand(200, 400),
             ];
 
-            if($i % 500 == 0) {
+            if($i % 10 == 0) {
                 DB::table($table)->insert($arrData);
                 $arrData = [];
             }

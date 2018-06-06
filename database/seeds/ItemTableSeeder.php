@@ -16,26 +16,28 @@ class ItemTableSeeder extends Seeder
         $table = 't_item';
         DB::table($table)->truncate();
 
-        $faker = Faker::create();
-        for ($i = 1; $i <=50000; $i++) {
+        $faker = Faker::create('ja_JP');
+        for ($i = 1; $i <=5000; $i++) {
             $arrData[] = [
                 'item_id' => $this->generateRandomString(10),
+                'view_on_time' => Carbon::now()->subDay(1),
+                'sale_on_time' => Carbon::now()->subDay(1),
                 'flag1' => rand(1, 2),
                 'flag2' => rand(1, 2),
                 'magazine_flg' => rand(1, 2),
                 'sale_type' => rand(0, 2),
                 'view' => 1,
                 'view_lang' => 1,
-                'remarks' => $faker->text,
+                'remarks' => $faker->realText(10),
                 'remarks_lang' => null,
                 'item_copy' => null,
-                'remarks_lang' => $faker->text,
+                'remarks_lang' => $faker->realText(10),
                 'item_copy_lang' => null,
-                'item_comment_pc' =>  $faker->text,
+                'item_comment_pc' =>  $faker->realText(10),
                 'item_comment_pc_lang' => null,
-                'item_comment_mo' =>  $faker->text,
+                'item_comment_mo' =>  $faker->realText(10),
                 'image_count' =>  1,
-                'keyword' =>  $faker->text,
+                'keyword' =>  $faker->realText(10),
                 'keyword_lang' =>  null,
                 'meta' =>  null,
                 'tag' =>  null,

@@ -16,7 +16,7 @@ class ProductTableSeeder extends Seeder
         $table = 't_product';
         $brandIds = array_pluck(DB::table('t_brand')->get(), 'brand_id');
         DB::table($table)->truncate();
-        $faker = Faker::create();
+        $faker = Faker::create('ja_JP');
         for ($i = 1; $i <= 10000; $i++) {
             $arrData[] = [
                 'item_code' => $this->generateRandomString(),
@@ -37,13 +37,13 @@ class ProductTableSeeder extends Seeder
                 'year_code' => null,
                 'season_code' => null,
                 'floor_type' => null,
-                'size_comment' => $faker->text,
-                'size_comment_lang' => $faker->text,
+                'size_comment' => $faker->realText(10),
+                'size_comment_lang' => $faker->realText(10),
                 'material' => null,
                 'material_lang' => null,
                 'origin_country' => null,
                 'origin_country_lang' => null,
-                'member_limited' => null,
+                'member_limited' => rand(1,2),
                 'register_date' => Carbon::now(),
                 'update_date' => Carbon::now(),
             ];

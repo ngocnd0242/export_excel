@@ -15,10 +15,10 @@ class BrandTableSeeder extends Seeder
     {
         $table = 't_brand';
         DB::table($table)->truncate();
-        $faker = Faker::create();
-        for ($i = 1; $i <=3; $i++) {
+        $faker = Faker::create('ja_JP');
+        for ($i = 1; $i <=4; $i++) {
             DB::table($table)->insert([
-                'brand_id' => $i,
+                'brand_id' => '0'.$i,
                 'brand_name' => $faker->name,
 
                 'brand_name_lang' => null,
