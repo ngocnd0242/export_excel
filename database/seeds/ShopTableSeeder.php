@@ -47,7 +47,7 @@ class ShopTableSeeder extends Seeder
                 'comment5' => null,
                 'comment5_lang' => null,
                 'sort' => null,
-                'view' => rand(1,2),
+                'view' => 1,
                 'view_lang' => 1,
                 'register_date' => Carbon::now(),
                 'update_date' => Carbon::now(),

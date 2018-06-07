@@ -16,6 +16,7 @@ class SkuTableSeeder extends Seeder
         $table = 't_sku';
         $itemIds = array_pluck(DB::table('t_item')->get(), 'item_id');
         $itemCode = array_pluck(DB::table('t_product')->get(), 'item_code');
+        $colorCode = array_pluck(DB::table('t_color')->get(), 'color_code');
 
         DB::table($table)->truncate('ja_JP');
         $faker = Faker::create();
@@ -28,7 +29,7 @@ class SkuTableSeeder extends Seeder
                 'sire_code' => rand(1, 10),
                 'jan_code' => rand(1, 10),
                 'size_code' => rand(1, 10),
-                'color_code' => rand(1, 10),
+                'color_code' => $faker->randomElement($colorCode),
                 'gedai' => rand(1, 10),
                 'gedai_lang' => rand(1, 10),
                 'teika' => rand(1, 10),

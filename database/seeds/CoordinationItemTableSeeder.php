@@ -17,6 +17,7 @@ class CoordinationItemTableSeeder extends Seeder
         $coordinationIds = array_pluck(DB::table('t_coordination')->get(), 'coordination_id');
 
         $itemCode = array_pluck(DB::table('t_product')->get(), 'item_code');
+        $colorCode = array_pluck(DB::table('t_color')->get(), 'color_code');
         DB::table($table)->truncate();
         $faker = Faker::create();
         for ($i = 1; $i <= 50000; $i++) {
@@ -24,10 +25,10 @@ class CoordinationItemTableSeeder extends Seeder
                 'coordination_item_no' => $i,
                 'coordination_id' => $faker->randomElement($coordinationIds),
                 'item_code' => $faker->randomElement($itemCode),
-                'color_code' => $faker->randomElement(["L","M","XL"]),
+                'color_code' => $faker->randomElement($colorCode),
                 'size_code' => rand(1, 50),
                 'sort' => rand(1, 50),
-                'view' => rand(1, 2),
+                'view' => 1,
                 'register_date' => Carbon::now(),
                 'update_date' => Carbon::now(),
             ];

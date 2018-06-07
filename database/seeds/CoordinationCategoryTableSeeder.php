@@ -25,7 +25,7 @@ class CoordinationCategoryTableSeeder extends Seeder
                 'coord_category_title' => $faker->name,
                 'comment' => $faker->text,
                 'comment_mb' => $faker->text,
-                'view' => rand(1, 2),
+                'view' => 1,
                 'sort' => rand(1,50),
                 'register_date' => Carbon::now(),
                 'update_date' => Carbon::now(),
